@@ -13,7 +13,7 @@ def passGen(user_number):
 
 def rep_with_upper(word):
     newList = list(word)
-    randomNumber = random.randint(0, len(newList))
+    randomNumber = random.randint(0, len(newList) - 1)
     newList[randomNumber] = newList[randomNumber].upper()
     return "".join(newList)
 
@@ -28,6 +28,13 @@ def swap_letters(word):
     return "".join(currPass)
 
 
+def search_letter(word, letter):
+    if letter.lower() in word or letter.upper() in word:
+        print("It contains ")
+    else:
+        print("It does not contains")
+
+
 temp_number = int(input("Please enter a number between 3 and 7:"))
 
 while temp_number < 3 or temp_number > 7:
@@ -40,3 +47,4 @@ else:
     tempPass = rep_with_upper(tempPass)
     tempPass = swap_letters(tempPass)
     print("Final version of the password:  " + tempPass)
+    search_letter(tempPass, "h")
